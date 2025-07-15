@@ -7,6 +7,8 @@ import Footer from './shared/Footer'
 import useGetAllJobs from '@/hooks/useGetAllJobs'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import TrustedPartners from './TrustedPartners';
+import Spline from './SplineBG';
 
 const Home = () => {
   useGetAllJobs();
@@ -18,11 +20,15 @@ const Home = () => {
     }
   }, []);
   return (
-    <div>
+    <div className="relative">
       <Navbar />
+      <div className="w-full h-[420px] bg-transparent">
+        <Spline />
+      </div>
       <HeroSection />
       <CategoryCarousel />
       <LatestJobs />
+      <TrustedPartners />
       <Footer />
     </div>
   )
